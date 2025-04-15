@@ -1,10 +1,11 @@
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import joblib
 import os
-import numpy as np
+import matplotlib.pyplot as plt
 
 # Obtenir le chemin absolu du dossier du script
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -39,6 +40,16 @@ print("Random Forest - RMSE : ", np.sqrt(mean_squared_error(y_test, y_pred_model
 y_train_pred = model.predict(X_train)
 print("Train MAE :", mean_absolute_error(y_train, y_train_pred))
 print("Test MAE  :", mean_absolute_error(y_test, y_pred_model))
+
+# Visualisation des résultats
+plt.figure(figsize=(6, 6))
+plt.scatter(y_test, y_pred_model, alpha=0.5)
+plt.plot([y.min(), y.max()], [y.min(), y.max()], 'k--')
+plt.xlabel("Valeurs réelles")
+plt.ylabel("Prédictiopns")
+plt.title("Prédictions Random Forest vs Réalité")
+plt.grid(True)
+plt.show()
 
 # Sauvegarde du modèle
 joblib.dump(model, os.path.join(PROJECT_ROOT, 'model', 'model_calories.pkl'))
