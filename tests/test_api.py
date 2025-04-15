@@ -14,5 +14,5 @@ def test_predict_calories():
 
     assert response.status_code == 200
     data = response.json()
-    assert "calories_predites" in data
-    assert isinstance(data["calories_predites"], float)
+    assert "calories_brulees" in data
+    assert isinstance(data["calories_brulees"], float)
