@@ -6,6 +6,7 @@ contourpy
 cycler
 fastapi
 fonttools
+httpx
 idna
 jmespath
 joblib
