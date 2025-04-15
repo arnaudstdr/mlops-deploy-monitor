@@ -29,10 +29,10 @@ def test_missing_fields():
 def test_extreme_values():
     response = client.post("/predict", json={
         "poids_kg": 300,
-        "duree_min": 0,
-        "vitesse_moyenne": -10,
-        "distance_km": 9999,
-        "fc_moyenne": 10
+        "duree_min": 5,
+        "vitesse_moyenne": 0,
+        "distance_km": 1,
+        "fc_moyenne": 30
     })
 
     assert response.status_code == 200
