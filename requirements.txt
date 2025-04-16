@@ -13,6 +13,7 @@ jmespath
 joblib
 kiwisolver
 matplotlib
+mlflow
 numpy
 packaging
 pandas

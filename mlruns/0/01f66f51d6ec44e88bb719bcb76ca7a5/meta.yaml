@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/arnaudstadler/Documents/PROJETS/2_PROJETS_MLOPS/mlops-deploy-monitor/mlruns/0/01f66f51d6ec44e88bb719bcb76ca7a5/artifacts
+end_time: 1744790910132
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 01f66f51d6ec44e88bb719bcb76ca7a5
+run_name: hilarious-rat-98
+run_uuid: 01f66f51d6ec44e88bb719bcb76ca7a5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744790908134
+status: 3
+tags: []
+user_id: arnaudstadler

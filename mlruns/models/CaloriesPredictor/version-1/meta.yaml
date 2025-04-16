@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1744791415192
+current_stage: None
+description: null
+last_updated_timestamp: 1744791415192
+name: CaloriesPredictor
+run_id: 5e3d961b2781402ab8b9e0290faaba9f
+run_link: null
+source: file:///Users/arnaudstadler/Documents/PROJETS/2_PROJETS_MLOPS/mlops-deploy-monitor/mlruns/0/5e3d961b2781402ab8b9e0290faaba9f/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///Users/arnaudstadler/Documents/PROJETS/2_PROJETS_MLOPS/mlops-deploy-monitor/mlruns/0/5e3d961b2781402ab8b9e0290faaba9f/artifacts/model
+user_id: null
+version: 1

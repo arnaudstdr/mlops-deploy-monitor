@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/arnaudstadler/Documents/PROJETS/2_PROJETS_MLOPS/mlops-deploy-monitor/mlruns/0/5e3d961b2781402ab8b9e0290faaba9f/artifacts
+end_time: 1744791415205
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5e3d961b2781402ab8b9e0290faaba9f
+run_name: debonair-wolf-838
+run_uuid: 5e3d961b2781402ab8b9e0290faaba9f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744791413441
+status: 3
+tags: []
+user_id: arnaudstadler

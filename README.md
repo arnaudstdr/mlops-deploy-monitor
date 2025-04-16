@@ -68,6 +68,7 @@ Le `Dockerfile` construit une image multi-stage :
 - ✅ Tests API
 - ✅ CI/CD avec GitHub Actions
 - ✅ Dockerisation
+- 🔜 Ajouter tracking dans `train.py` - MLflow (local)
 - 🔜 Déploiement sur Render
 - 🔜 Ajout d'un test direct du modèle (`test_model.py`)
 - 🔜 Monitoring simple (logs, latence)
