@@ -2,16 +2,39 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from deployment.inference import CaloriesPredictor
 import logging
+import time
+from fastapi import Request
+from starlette.middleware.base import BaseHTTPMiddleware
+import os
+os.makedirs("logs", exist_ok=True)
 
 # Configuration du logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s]  %(message)s",
+    handlers=[
+        logging.FileHandler("logs/api.log"),
+        logging.StreamHandler()
+    ]
+)
 logger = logging.getLogger(__name__)
+
+class LoggingMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        start_time = time.time()
+        response = await call_next(request)
+        duration = time.time() - start_time
+
+        logger.info(f"{request.method} {request.url.path} | Status: {response.status_code} | Duration: {duration:.3f}s")
+        return response
 
 app = FastAPI(
     title="API de Prédiction de Calories",
     description="API pour prédire les calories brûlées lors d'une sortie Vélo",
     version="1.0.0"
 )
+
+app.add_middleware(LoggingMiddleware)
 
 @app.get("/", summary="Page d'accueil", description="Page d'accueil informative de l'API")
 async def root():
