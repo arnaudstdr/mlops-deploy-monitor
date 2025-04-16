@@ -1,6 +1,7 @@
 # 🚴‍♂️ API de Prédiction de Calories
 
 [![CI - Build and Test FastAPI App](https://github.com/arnaudstdr/mlops-deploy-monitor/actions/workflows/deploy.yml/badge.svg)](https://github.com/arnaudstdr/mlops-deploy-monitor/actions/workflows/deploy.yml)
+[![Deploy on Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
 
 API FastAPI pour prédire les **calories brûlées lors d’une sortie à vélo** à partir de données physiologiques et de performance.  
 Développée dans une logique **MLOps** avec conteneurisation, CI/CD et tests automatisés.
@@ -41,6 +42,8 @@ docker run -d -p 8000:8000 mlops-api
 
 📘 Accès complet à la documentation Swagger : http://localhost:8000/docs
 
+🌍 API déployée en ligne : [https://mlops-deploy-monitor.onrender.com](https://mlops-deploy-monitor.onrender.com/docs)
+
 ## 🧪 Tests
 
 ### Lancer les tests manuellement
@@ -68,7 +71,7 @@ Le `Dockerfile` construit une image multi-stage :
 - ✅ Tests API
 - ✅ CI/CD avec GitHub Actions
 - ✅ Dockerisation
-- 🔜 Ajouter tracking dans `train.py` - MLflow (local)
+- ✅ Ajouter tracking dans `train.py` - MLflow (local)
 - 🔜 Déploiement sur Render
 - 🔜 Ajout d'un test direct du modèle (`test_model.py`)
 - 🔜 Monitoring simple (logs, latence)
