@@ -13,6 +13,22 @@ app = FastAPI(
     version="1.0.0"
 )
 
+@app.get("/", summary="Page d'accueil", description="Page d'accueil informative de l'API")
+async def root():
+    return {
+        "message": "Bienvenue sur l'API de Prédiction de Calories 🚴‍♂️",
+        "description": (
+            "Cette API permet d'estimer les calories brûlées lors d'une sortie à vélo en fonction de paramètres "
+            "psysiologiques et d'effort tels que le poids, la durée, la distance ou encore la fréquence cardiaque moyenne."
+        ),
+        "endpoints": {
+            "/predict": "Envoyer des données pour obtenir une prédiction",
+            "/health": "Vérifie l'état de santé de l'API",
+            "/docs": "Documentation interactive Swagger"
+        },
+        "auteur": "Arnaud Stadler - MLOps Engineer"
+    }
+
 # Initialisation du modèle
 try:
     model = CaloriesPredictor()
