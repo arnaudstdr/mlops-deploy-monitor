@@ -1,7 +1,10 @@
 # 🚴‍♂️ API de Prédiction de Calories
 
 [![CI - Build and Test FastAPI App](https://github.com/arnaudstdr/mlops-deploy-monitor/actions/workflows/deploy.yml/badge.svg)](https://github.com/arnaudstdr/mlops-deploy-monitor/actions/workflows/deploy.yml)
+![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![Deploy on Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
 
 API FastAPI pour prédire les **calories brûlées lors d’une sortie à vélo** à partir de données physiologiques et de performance.  
 Développée dans une logique **MLOps** avec conteneurisation, CI/CD et tests automatisés.
