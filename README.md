@@ -58,6 +58,24 @@ L'environnement de développement (Python, dépendances, outils) sera automatiqu
 
 🌍 API déployée en ligne : [https://mlops-deploy-monitor.onrender.com](https://mlops-deploy-monitor.onrender.com/docs)
 
+## 📊 Suivi des expériences avec MLflow
+
+Ce projet utilise [MLflow](https://mlflow.org/) pour le suivi des expériences de machine learning :
+- Enregistrement automatique des paramètres du modèle (type, hyperparamètres)
+- Suivi des métriques d'évaluation (MAE, RMSE)
+- Sauvegarde et versionning du modèle entraîné
+- Exemple d'entrée pour la reproductibilité
+
+L'entraînement (`model/train.py`) logue chaque run dans MLflow. Vous pouvez visualiser l'historique des expériences et comparer les modèles via l'interface web MLflow.
+
+### Lancer l'UI MLflow en local
+```bash
+mlflow ui --backend-store-uri mlruns
+```
+L'interface sera accessible sur : http://localhost:5000
+
+> **Astuce :** Les artefacts et métriques sont stockés dans le dossier `mlruns/` à la racine du projet.
+
 ## 🧪 Tests
 
 ### Lancer les tests manuellement
@@ -80,6 +98,29 @@ Le `Dockerfile` construit une image multi-stage :
 2. **Stage fianl**
    - Copie du code + environnement
    - Démarrage avec unicorn
+
+## ☸️ Déploiement sur Kubernetes
+
+Kubernetes est un standard pour l'orchestration et le déploiement de services en production dans le MLOps.
+
+Un exemple complet de manifeste Kubernetes (`deployment.yaml`) est fourni à la racine du projet. Ce fichier montre ma capacité à industrialiser le déploiement d'une API de machine learning dans un cluster cloud-native.
+
+### 1. Fichier `deployment.yaml`
+Le fichier contient :
+- Un objet **Deployment** pour déployer et gérer la montée en charge de l'API
+- Un objet **Service** pour exposer l'API sur le réseau du cluster
+
+Vous pouvez l'adapter facilement à votre image Docker (remplacez `<votre-image-docker>` par le nom de votre image, ex : `arnaudstdr/mlops-api:latest`).
+
+### 2. Déploiement sur le cluster
+```bash
+kubectl apply -f deployment.yaml
+```
+L'API sera accessible sur le port 30080 du nœud (ou via un Ingress en production).
+
+> Fournir ce fichier prouve la maîtrise des bonnes pratiques DevOps/MLOps et facilite l'intégration dans des environnements cloud ou hybrides.
+
+Kubernetes permet de passer à l'échelle, de monitorer et de gérer les déploiements de modèles de façon industrielle.
 
 ## 🛣️ Roadmap
 - ✅ Tests API
