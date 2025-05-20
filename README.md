@@ -34,6 +34,20 @@ docker run -d -p 8000:8000 mlops-api
 ```
 ➡️ L'API est disponible sur : http://localhost:8000/docs
 
+## 🐳 Utilisation avec Dev Container
+
+Ce projet est prêt à être utilisé avec [Dev Containers](https://containers.dev/) de VS Code.
+
+### 1. Ouvrir dans VS Code
+- Installez l'extension **Dev Containers** sur VS Code.
+- Ouvrez le dossier du projet dans VS Code.
+- Cliquez sur `Reopen in Container` lorsque cela est proposé, ou utilisez la palette de commandes (`F1`) :
+  - `Dev Containers: Reopen in Container`
+
+L'environnement de développement (Python, dépendances, outils) sera automatiquement configuré dans le conteneur.
+
+➡️ Vous pouvez ensuite lancer l'API, exécuter les tests, etc. directement dans le conteneur.
+
 ## 🔌 Endpoints
 | Méthode | Endpoint   | Description                  |
 |---------|------------|------------------------------|
